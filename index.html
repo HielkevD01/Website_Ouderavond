@@ -1,119 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voorbeeld Webiste</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Over Mij - Hoornbeeck College Stijl</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">Mijn eerste website</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">Over ons</a></li>
-                    <li><a href="#projects">Projecten</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-    </header>
-
-    <section id="hero">
-        <div class="container">
-        <h2>Goedendag, ik ben Hielke van Dieren</h2>
-        <p>"Het is nog nooit niet goedgekomen."</p>
-    </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>About me</h2>
-            <p>Wat ik hier doe is: niks</p>
-        </div>
-    </section>
-
-      <div class="main-content-wrapper">
-        <main class="main-content">
-  
-
-             <section id="projects">
-                   <div class="container">
-                   <h2>Projecten</h2>
-                   <div class="project-grid">
-                      <div class="project-card">
-                          <div class="project-icon">
-                             <i class="fa-solid fa-robot"></i></i>  
-                           </div>
-                           <h3>Project 1</h3>
-                           <p>Omschrijving van project 1</p>
-                        </div>
-                     <div class="project-card">
-                           <div class="project-icon">
-                              <i class="fa-solid fa-computer"></i></i>  
-                          </div>
-                           <h3>Project 2</h3>
-                            <p>Omschrijving van project 2</p>
-                     </div>
-                      <div class="project-card">
-                          <div class="project-icon">
-                             <i class="fa-solid fa-robot"></i></i>  
-                           </div>
-                           <h3>Project 3</h3>
-                           <p>Omschrijving van project 3</p>
-                       </div>
-                    </div>
-             </section>
-
-              <section id="contact">
-                    <div class="container">
-                        <h2>Contact me</h2>
-                       <form id="contact-form">
-                          <input type="text" placeholder="Vul je naam in" required>
-                         <input type="email" placeholder="Vul je email in" required>
-                          <textarea placeholder="Vul hier je bericht in" required></textarea>
-                          <button type="submit">Verstuur bericht</button>
-                      </form>
-                   </div>
-                </section>
-        </main>
-               
-         <aside class="sidebar">
-              <h2>Tijdlijn</h2>
-               <ul class="timeline">
-                  <li>
-                     <div class="timeline-content">
-                         <span class="timeline-date">2007</span>
-                            <p>De geboorte van dit prachtige kind</p>
-                     </div>
-                  </li>
-                  <li>
-                      <div class="timeline-content">
-                            <span class="timeline-date">2011</span>
-                            <p>Start basisschool</p>
-                         </div>
-                    </li>
-                     <li>
-                         <div class="timeline-content">
-                            <span class="timeline-date">2019</span>
-                            <p>Start middelbare school </p>
-                         </div>
-                     </li>
-                     <li>
-                            <div class="timeline-content">
-                              <span class="timeline-date">2025</span>
-                               <p>Start opleiding ICT</p>
-                            </div>
-                     </li>
+<header class="header">
+    <div class="header-container">
+        <img src="logo-hoornbeeck.jpeg" alt="Hoornbeeck College Logo" class="logo">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link active">Home</a></li> <!-- Nieuwe Home-knop -->
+                <li><a href="about.html" class="nav-link">Over het Hoornbeeck College</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Over de ouderavond</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="doel.html">Doel</a></li>
+                        <li><a href="organisatie.html">Organisatie</a></li>
+                        <li><a href="programma.html">Programma</a></li>
+                        <li><a href="plattegrond.html">Plattegrond</a></li>
                     </ul>
-            </aside>
-       </div>  
-    <footer>
-        <div class='container'>
-            <p>&copy; 2025 Mijn eerste website. All rights reserverd to me.</p>
-        </div>
-    </footer>
+                </li>
+                <li><a href="verschillende.html" class="nav-link">Verschillende ICT opleidingen</a></li>
+                <li><a href="sfeerbeelden.html" class="nav-link">Sfeerbeelden</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="main-area">
+                <section class="greeting greeting--index">
+                    <div class="greeting-overlay">
+                        <h1>Hallo, ik ben Hielke van Dieren</h1>
+                        <p>Welkom op mijn persoonlijke pagina. Ik ben student aan het Hoornbeeck College en studeer voor netwerkbeheer.</p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>Over Mij</h2>
+                    <p>Ik ben een enthousiaste MBO-student met interesse in technologie en creatieve projecten. Tijdens mijn opleiding aan het Hoornbeeck College heb ik geleerd om te coderen, hoe een laptop werkt en hoe ik klantgericht mensen help. Deze pagina toont een overzicht van mijn werk en achtergrond.</p>
+                </section>
+
+                <section class="projects-section">
+                    <h2>Mijn Projecten</h2>
+                    <div class="projects-grid">
+                        <div class="project-block">
+                            <h3>Project 1: Persoonlijke Website</h3>
+                            <p>Een responsive website gebouwd met HTML, CSS. Dit project toont mijn vaardigheden in webdesign.</p>
+                            <a href="project1.html" class="project-link">Bekijk Project</a>
+                        </div>
+
+                        <div class="project-block">
+                            <h3>Project 2: Netwerkbeheer</h3>
+                            <p>Een klein netwerk van een aantal pc's die d.m.v. routers bestanden naar elkaar kunnen versturen.</p>
+                            <a href="project3.html" class="project-link">Bekijk Project</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <h3>Algemene Punten ouderavond</h3>
+                <ul class="sidebar-list">
+                    <li><strong>Tijd:</strong>19:30-21:00</li>
+                    <li><strong>Locatie:</strong> Kampen, Nederland</li>
+                    <li><strong>Lokaal:</strong> 2.02</li>
+                    <li><a href="cv.html" class="sidebar-link">Bekijk mijn CV</a></li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Hielke van Dieren - Willem Hendrik Zwartallee 1, 8265TZ Kampen</p>
+    </footer>
 </body>
 </html>

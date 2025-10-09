@@ -1,0 +1,921 @@
+/* ========================================
+   RESET EN BASISSTIJLEN
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9; /* Lichte grijze achtergrond */
+}
+
+/* ========================================
+   HEADER EN NAVIGATIE
+   ======================================== */
+.header {
+    background-color: #01cac3; /* Hoornbeeck blauw */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centrering */
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+}
+
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap; /* Voorkomt wrapping van items in de lijst */
+}
+
+.nav-link, .dropdown-toggle {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0.1rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
+    white-space: nowrap; /* Voorkomt dat tekst binnen de link wrappen */
+    flex-shrink: 0; /* Voorkomt krimp van de link */
+    display: inline-block; /* Consistente breedte */
+}
+
+.nav-link:hover, .dropdown-toggle:hover {
+    background-color: #f5ba36; /* Oranje accent */
+}
+
+.nav-link.active {
+    background-color: #f5ba36; /* Highlight voor actieve pagina */
+    font-weight: bold;
+    padding: 0.1rem 0.8rem; /* Iets kleinere padding voor active */
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Dropdown Menu - Verbeterde Fix */
+.dropdown {
+    position: relative; /* Essentieel: Maakt de dropdown een positionerings-context voor de absolute menu */
+    display: inline-block; /* Voorkomt dat de li te breed wordt */
+}
+
+.dropdown-menu {
+    display: none; /* Standaard verborgen */
+    position: absolute; /* Absolute positionering ten opzichte van .dropdown */
+    top: 100%; /* Direct onder de toggle-link */
+    left: 0; /* Uitgelijnd met de link (niet right, voor betere uitlijning) */
+    background-color: #003366;
+    min-width: 250px; /* Iets breder voor langere items zoals 'Programma' */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    list-style: none;
+    z-index: 1000; /* Hoog z-index voor overlapping */
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Voorkomt wrapping in dropdown */
+    opacity: 0;
+    transform: translateY(-10px); /* Subtiele animatie voor soepele verschijning */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in */
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu { /* Hover + focus voor accessibility (bijv. toetsenbord-navigatie) */
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtiele scheiding tussen items */
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Voorkomt wrapping in dropdown-items */
+    flex-shrink: 0;
+    font-weight: 400;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5ba36; /* Oranje hover */
+}
+
+.dropdown-menu a.active { /* Voor active items in dropdown */
+    background-color: #f5ba36;
+    font-weight: bold;
+}
+
+
+
+/* ========================================
+   MAIN CONTENT (ALGEMEEN, MET CENTRERING)
+   ======================================== */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto; /* Horizontale centrering */
+    padding: 2rem;
+    text-align: center; /* Centreert alle tekst en inline-elementen */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centreert kinderen (secties) */
+}
+
+/* Voor pagina's met sidebar (bijv. index): Overschrijf layout */
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrering van wrapper */
+    gap: 20px;
+    align-items: flex-start; /* Align top, maar centreer overall */
+}
+
+.main-area {
+    flex: 1;
+    min-width: 0;
+    text-align: center; /* Centreert content in main-area */
+    max-width: calc(100% - 270px); /* Past aan sidebar aan */
+}
+
+/* ========================================
+   GREETING SECTIE (ALGEMEEN, MET PER-PAGINA CLASSES)
+   ======================================== */
+/* Greeting Sectie (algemeen) */
+.greeting {
+    position: relative;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 4rem 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    min-height: 300px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.greeting-overlay {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparante overlay voor leesbaarheid */
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.greeting h1 {
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.greeting p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Specifiek voor index-pagina: Achtergrondfoto */
+.greeting--index {
+    background-image: url('foto.jpg'); /* Vervang 'foto.jpg' door je eigen afbeelding, bijv. 'achtergrond-index.jpg' */
+}
+
+/* Per-pagina backgrounds: Voeg class toe in HTML, bijv. <section class="greeting greeting--index"> */
+.greeting--index {
+    background-image: url('foto.jpg');
+}
+
+.greeting--sfeerbeelden {
+    background-image: url('achtergrond-sfeerbeelden.jpg');
+}
+
+.greeting--plattegrond {
+    background-image: url('achtergrond-plattegrond.jpg');
+}
+
+/* ========================================
+   INFO SECTIE (VOOR INDEX)
+   ======================================== */
+.info-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 800px; /* Beperk voor centrering */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.info-section h2 {
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   PROJECTS SECTIE (VOOR INDEX)
+   ======================================== */
+.projects-section {
+    width: 100%;
+    max-width: 800px; /* Beperk voor centrering */
+    margin: 0 auto;
+}
+
+.projects-section h2 {
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center; /* Centreert blocks in grid */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-block {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px; /* Uniforme breedte */
+}
+
+.project-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-block h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-block p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #f5ba36;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #f5ba36;
+}
+
+/* ========================================
+   SIDEBAR (VOOR INDEX)
+   ======================================== */
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left; /* Sidebar links houden, main rechts */
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #003366; /* Match thema */
+    border-bottom: 2px solid #f5ba36; /* Oranje accent i.p.v. blauw */
+    padding-bottom: 10px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-left: 4px solid #f5ba36; /* Oranje accent */
+    border-radius: 4px;
+}
+
+.sidebar-list li strong {
+    color: #f5ba36;
+}
+
+.sidebar-link {
+    display: inline-block;
+    color: #f5ba36;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.sidebar-link:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   GALLERY SECTIE (VOOR SFEERBEELDEN)
+   ======================================== */
+.gallery-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center; /* Centreert items */
+    width: 100%;
+    max-width: 1000px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px; /* Uniform */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 15px;
+    font-size: 0.9em;
+    color: #666;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+/* ========================================
+   PLATTEGROND SECTIE (VOOR PLATTEGROND.HTML)
+   ======================================== */
+.plattegrond-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plattegrond-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.plattegrond-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.plattegrond-image {
+    max-width: 100%;
+    width: auto;
+    max-height: 800px;
+    display: block;
+    margin: 0 auto; /* Expliciete centrering */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.plattegrond-image:hover {
+    transform: scale(1.02);
+}
+
+.plattegrond-caption {
+    font-size: 1.1em;
+    color: #666;
+    margin: 0 auto;
+    max-width: 800px;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN (GECONSOLIDEERD)
+   ======================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .main-area {
+        max-width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+
+    .greeting {
+        padding: 2rem 1rem;
+        min-height: 250px;
+    }
+
+    .greeting h1 {
+        font-size: 2rem;
+    }
+
+    .greeting-overlay {
+        padding: 1.5rem;
+    }
+
+    .info-section,
+    .projects-section,
+    .gallery-section,
+    .plattegrond-section {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .projects-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-item img {
+        height: 250px;
+    }
+
+    .plattegrond-image {
+        max-height: 600px;
+    }
+
+    .plattegrond-caption,
+    .gallery-section h2,
+    .plattegrond-section h2 {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 0.5rem;
+    }
+
+    .greeting h1 {
+        font-size: 1.8rem;
+    }
+
+    .gallery-section,
+    .plattegrond-section {
+        padding: 20px 5px;
+    }
+
+    .plattegrond-image {
+        max-height: 500px;
+    }
+
+    .projects-grid,
+    .gallery-grid {
+        gap: 10px;
+    }
+}
+
+/* ========================================
+   PROGRAMMA SECTIE (VOOR PROGRAMMA.HTML)
+   ======================================== */
+.programma-section {
+    width: 100%;
+    max-width: 800px; /* Beperk voor centrering */
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.programma-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.programma-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px; /* Beperk voor leesbaarheid */
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.programma-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Beschrijving links voor leesbaarheid */
+    border-left: 4px solid #f5ba36; /* Oranje accentlijn voor tijdlijn-effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.programma-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.programma-time {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #f5ba36; /* Oranje voor tijd */
+    background-color: #f8f9fa; /* Lichte achtergrond voor tijd */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: fit-content; /* Past zich aan inhoud aan */
+    margin: 0 auto 0 0; /* Centreer tijd iets rechts voor asymmetrie */
+}
+
+.programma-description {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Specifiek voor greeting op deze pagina (optioneel) */
+.greeting--programma {
+    background-image: url('achtergrond-programma.jpg'); /* Vervang door je eigen afbeelding, bijv. een foto van een evenement; of verwijder voor geen background */
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 768px) {
+    .programma-section {
+        padding: 20px 10px;
+    }
+    
+    .programma-section h2 {
+        font-size: 2em;
+    }
+    
+    .programma-timeline {
+        gap: 15px;
+        max-width: 100%;
+    }
+    
+    .programma-item {
+        padding: 15px;
+    }
+    
+    .programma-time {
+        font-size: 1.2em;
+        padding: 8px 12px;
+    }
+    
+    .programma-description {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .programma-section {
+        padding: 20px 5px;
+    }
+    
+    .programma-time {
+        font-size: 1.1em;
+    }
+}
+
+/* ========================================
+   ABOUT SECTIES (VOOR ABOUT.HTML)
+   ======================================== */
+.about-section,
+.history-section,
+.students-section,
+.locations-section {
+    width: 100%;
+    max-width: 1000px; /* Beperk voor centrering */
+    margin: 0 auto 3rem auto;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-section h2,
+.history-section h2,
+.students-section h2,
+.locations-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.about-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Paragrafen links voor leesbaarheid */
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Students Sectie: Lijst-stijl */
+.students-list {
+    width: 100%;
+    max-width: 800px;
+}
+
+.student-point {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.student-point h3 {
+    color: #003366;
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #FF6600; /* Oranje accent */
+    padding-bottom: 0.5rem;
+}
+
+.student-point ul {
+    list-style: none;
+    padding: 0;
+}
+
+.student-point li {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.student-point li::before {
+    content: "•";
+    color: #FF6600; /* Oranje bullet */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+/* Locations Grid */
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+}
+
+.location-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.location-card h3 {
+    color: #003366;
+    font-size: 1.3em;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.location-card p {
+    color: #666;
+    font-size: 1em;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Specifiek voor greeting op deze pagina (optioneel) */
+.greeting--about {
+    background-image: url('achtergrond-about.jpg'); /* Vervang door je eigen afbeelding, bijv. een foto van het collegegebouw; of verwijder voor geen background */
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 768px) {
+    .about-section,
+    .history-section,
+    .students-section,
+    .locations-section {
+        padding: 20px 10px;
+        margin-bottom: 2rem;
+    }
+    
+    .about-section h2,
+    .history-section h2,
+    .students-section h2,
+    .locations-section h2 {
+        font-size: 2em;
+    }
+    
+    .about-content,
+    .student-point {
+        padding: 1.5rem;
+    }
+    
+    .locations-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .student-point li {
+        padding-left: 1rem;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section,
+    .history-section,
+    .students-section,
+    .locations-section {
+        padding: 15px 5px;
+    }
+    
+    .about-content p,
+    .student-point li {
+        font-size: 1em;
+    }
+    
+    .location-card {
+        padding: 1rem;
+    }
+}
