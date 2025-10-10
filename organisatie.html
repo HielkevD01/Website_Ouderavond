@@ -3,30 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Over Mij - Hoornbeeck College Stijl</title>
+    <title>Organisatie - Hoornbeeck College Stijl</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="header">
-    <div class="header-container">
-        <img src="logo-hoornbeeck.jpeg" alt="Hoornbeeck College Logo" class="logo">
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">Home</a></li> <!-- Nieuwe Home-knop -->
-                <li><a href="about.html" class="nav-link">Over het Hoornbeeck College</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Over de ouderavond</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="doel.html">Doel</a></li>
-                        <li><a href="organisatie.html">Organisatie</a></li>
-                        <li><a href="programma.html">Programma</a></li>
-                        <li><a href="plattegrond.html">Plattegrond</a></li>
-                    </ul>
-                </li>
-                <li><a href="verschillende.html" class="nav-link">Verschillende ICT opleidingen</a></li>
-                <li><a href="sfeerbeelden.html" class="nav-link">Sfeerbeelden</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header class="header">
+        <div class="header-container">
+            <img src="logo-hoornbeeck.jpeg" alt="Hoornbeeck College Logo" class="logo">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">Over het Hoornbeeck College</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Over de ouderavond</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="doel.html">Doel</a></li>
+                            <li><a href="organisatie.html" class="nav-link active">Organisatie</a></li>
+                            <li><a href="programma.html">Programma</a></li>
+                            <li><a href="plattegrond.html">Plattegrond</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="verschillende.html" class="nav-link">Verschillende ICT opleidingen</a></li>
+                    <li><a href="sfeerbeelden.html" class="nav-link">Sfeerbeelden</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="greeting greeting--organisatie">
+            <div class="greeting-overlay">
+                <h1>Organisatie van de Ouderavond</h1>
+                <p>Alles wat u moet weten over hoe de avond georganiseerd is. Van structuur tot praktische details.</p>
+            </div>
+        </section>
+
+        <section class="waarvoor-section">
+            <h2>Waarvoor is de ouderavond georganiseerd?</h2>
+            <div class="about-content">
+                <p>De ouderavond is georganiseerd om ouders te laten zien wat hun kinderen allemaal leren.</p>
+            </div>
+        </section>
+
+        <section class="organisatie-afbeelding-section">
+            <h2>Afbeelding Organisatie</h2>
+            <div class="organisatie-content">
+                <img src="organisatie-afbeelding.jpg" alt="Organisatie van de ouderavond" class="organisatie-image">
+                <p>Een impressie van hoe de ouderavond georganiseerd wordt, met studenten en docenten aan het werk.</p>
+            </div>
+        </section>
+
+        <section class="structuur-section">
+            <h2>Structuur van de avond</h2>
+            <div class="structuur-list">
+                <div class="structuur-item">
+                    <h3>Welkom en introductie</h3>
+                    <p>De avond start met een introductie door de coördinator van de ICT-opleiding. U krijgt een overzicht van wat u kunt verwachten.</p>
+                </div>
+                <div class="structuur-item">
+                    <h3>Presentaties van studenten</h3>
+                    <p>Studenten laten hun projecten zien en vertellen over hun ervaringen tijdens de opleiding.</p>
+                </div>
+                <div class="structuur-item">
+                    <h3>Vragen en afsluiting</h3>
+                    <p>U kunt vragen stellen aan studenten en docenten. Daarna wordt de avond afgesloten door de docent.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Hielke van Dieren - Willem Hendrik Zwartallee 1, 8265TZ Kampen</p>
+    </footer>
+</body>
+</html>
